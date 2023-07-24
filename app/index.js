@@ -4,6 +4,8 @@ import { Stack, useRouter } from "expo-router";
 
 import {COLORS ,icons, images,SIZES} from '../constants'
 import {Nearbyjobs , Popularjobs , ScreenHeaderBtn , Welcome} from '../components'
+import styles from "../styles/search";
+import { TextInput } from "react-native-gesture-handler";
 
 
 
@@ -16,12 +18,15 @@ const Home = () => {
                     headerStyle:{backgroundColor:COLORS.lightWhite},
                     headerShadowVisible : false ,
                     headerLeft: () =>(
-                        <ScreenHeaderBtn iconUrl={icons.menu} dimension="60%" />
+                        <ScreenHeaderBtn iconUrl={icons.menu} dimension="70%"  />
                     ) ,
                     headerRight: () =>(
                         <ScreenHeaderBtn iconUrl={images.profile} dimension="100%" />
                     ),
-                    headerTitle: ""
+                  
+
+                    headerTitle: "Vectiqa" ,
+                    
                 }}
             
             />
@@ -34,7 +39,18 @@ const Home = () => {
                 <Popularjobs />
                 <Nearbyjobs/>
                 </View>
+
+                <View style={styles.searchContainer}>
+                <View style={styles.searchWrapper}>
+                <TextInput 
+                style={styles.searchInput}
+                />
+                </View>
+                
+                
+                </View>
             </ScrollView>
+            
 
         </SafeAreaView>
     )
